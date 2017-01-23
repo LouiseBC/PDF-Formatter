@@ -10,7 +10,7 @@
 		B79DA4501E36463D00117A28 /* Ingredient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B79DA4471E36463D00117A28 /* Ingredient.cpp */; };
 		B79DA4511E36463D00117A28 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B79DA4491E36463D00117A28 /* main.cpp */; };
 		B79DA4521E36463D00117A28 /* Page.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B79DA44A1E36463D00117A28 /* Page.cpp */; };
-		B79DA4531E36463D00117A28 /* PDF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B79DA44C1E36463D00117A28 /* PDF.cpp */; };
+		B79DA4531E36463D00117A28 /* Page.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B79DA44C1E36463D00117A28 /* Page.cpp */; };
 		B79DA4541E36463D00117A28 /* Recipe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B79DA44E1E36463D00117A28 /* Recipe.cpp */; };
 		B79DA45A1E36486B00117A28 /* libhpdf-2.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B79DA4581E36486B00117A28 /* libhpdf-2.3.0.dylib */; };
 		B79DA45B1E36486B00117A28 /* libhpdf-2.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B79DA4591E36486B00117A28 /* libhpdf-2.3.0.dylib */; };
@@ -30,16 +30,16 @@
 
 /* Begin PBXFileReference section */
 		B79DA43C1E36462E00117A28 /* Recipes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Recipes; sourceTree = BUILT_PRODUCTS_DIR; };
-		B79DA4461E36463D00117A28 /* Fonts.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Fonts.hpp; path = ../../src/Fonts.hpp; sourceTree = "<group>"; };
-		B79DA4471E36463D00117A28 /* Ingredient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ingredient.cpp; path = ../../src/Ingredient.cpp; sourceTree = "<group>"; };
-		B79DA4481E36463D00117A28 /* Ingredient.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Ingredient.hpp; path = ../../src/Ingredient.hpp; sourceTree = "<group>"; };
-		B79DA4491E36463D00117A28 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../src/main.cpp; sourceTree = "<group>"; };
-		B79DA44A1E36463D00117A28 /* Page.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Page.cpp; path = ../../src/Page.cpp; sourceTree = "<group>"; };
-		B79DA44B1E36463D00117A28 /* Page.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Page.hpp; path = ../../src/Page.hpp; sourceTree = "<group>"; };
-		B79DA44C1E36463D00117A28 /* PDF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PDF.cpp; path = ../../src/PDF.cpp; sourceTree = "<group>"; };
-		B79DA44D1E36463D00117A28 /* PDF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PDF.hpp; path = ../../src/PDF.hpp; sourceTree = "<group>"; };
-		B79DA44E1E36463D00117A28 /* Recipe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Recipe.cpp; path = ../../src/Recipe.cpp; sourceTree = "<group>"; };
-		B79DA44F1E36463D00117A28 /* Recipe.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Recipe.hpp; path = ../../src/Recipe.hpp; sourceTree = "<group>"; };
+		B79DA4461E36463D00117A28 /* Fonts.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Fonts.hpp; path = ../src/Fonts.hpp; sourceTree = "<group>"; };
+		B79DA4471E36463D00117A28 /* Ingredient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ingredient.cpp; path = ../src/Ingredient.cpp; sourceTree = "<group>"; };
+		B79DA4481E36463D00117A28 /* Ingredient.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Ingredient.hpp; path = ../src/Ingredient.hpp; sourceTree = "<group>"; };
+		B79DA4491E36463D00117A28 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../src/main.cpp; sourceTree = "<group>"; };
+		B79DA44A1E36463D00117A28 /* Page.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Page.cpp; path = ../src/Page.cpp; sourceTree = "<group>"; };
+		B79DA44B1E36463D00117A28 /* Page.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Page.hpp; path = ../src/Page.hpp; sourceTree = "<group>"; };
+		B79DA44C1E36463D00117A28 /* Page.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Page.cpp; path = ../src/Page.cpp; sourceTree = "<group>"; };
+		B79DA44D1E36463D00117A28 /* PDF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PDF.hpp; path = ../src/PDF.hpp; sourceTree = "<group>"; };
+		B79DA44E1E36463D00117A28 /* Recipe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Recipe.cpp; path = ../src/Recipe.cpp; sourceTree = "<group>"; };
+		B79DA44F1E36463D00117A28 /* Recipe.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Recipe.hpp; path = ../src/Recipe.hpp; sourceTree = "<group>"; };
 		B79DA4551E36484700117A28 /* Recipes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Recipes.xcodeproj; sourceTree = "<group>"; };
 		B79DA4581E36486B00117A28 /* libhpdf-2.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libhpdf-2.3.0.dylib"; path = "../../../../../../usr/local/Cellar/libharu/2.3.0/lib/libhpdf-2.3.0.dylib"; sourceTree = "<group>"; };
 		B79DA4591E36486B00117A28 /* libhpdf-2.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libhpdf-2.3.0.dylib"; path = "../../../../../../usr/local/Cellar/libharu/2.3.0/lib/libhpdf-2.3.0.dylib"; sourceTree = "<group>"; };
@@ -80,16 +80,16 @@
 		B79DA43E1E36462E00117A28 /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
-				B79DA4461E36463D00117A28 /* Fonts.hpp */,
-				B79DA4471E36463D00117A28 /* Ingredient.cpp */,
-				B79DA4481E36463D00117A28 /* Ingredient.hpp */,
 				B79DA4491E36463D00117A28 /* main.cpp */,
 				B79DA44A1E36463D00117A28 /* Page.cpp */,
 				B79DA44B1E36463D00117A28 /* Page.hpp */,
-				B79DA44C1E36463D00117A28 /* PDF.cpp */,
+				B79DA44C1E36463D00117A28 /* Page.cpp */,
 				B79DA44D1E36463D00117A28 /* PDF.hpp */,
 				B79DA44E1E36463D00117A28 /* Recipe.cpp */,
 				B79DA44F1E36463D00117A28 /* Recipe.hpp */,
+				B79DA4461E36463D00117A28 /* Fonts.hpp */,
+				B79DA4471E36463D00117A28 /* Ingredient.cpp */,
+				B79DA4481E36463D00117A28 /* Ingredient.hpp */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -165,7 +165,7 @@
 				B79DA4541E36463D00117A28 /* Recipe.cpp in Sources */,
 				B79DA4521E36463D00117A28 /* Page.cpp in Sources */,
 				B79DA4511E36463D00117A28 /* main.cpp in Sources */,
-				B79DA4531E36463D00117A28 /* PDF.cpp in Sources */,
+				B79DA4531E36463D00117A28 /* Page.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +296,7 @@
 				B79DA4451E36462E00117A28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
