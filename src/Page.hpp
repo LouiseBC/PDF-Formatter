@@ -1,24 +1,33 @@
 #ifndef Page_h
 #define Page_h
 #include "hpdf.h"
-#include "Recipe.hpp"
-#include "Fonts.hpp"
+#include "TxtFile.hpp"
+
+class PageSet;
+class Fonts;
+//class TxtFile;
 
 class Page {
-    // Eventually calculate data within fonts struct
-    const Fonts* fonts;
-    const int TITLE_MAX_CHARS { 26 };
-    const int BODY_MAX_CHARS { 63 };
-    const int PADDING { 50 };
-    
-    void writeBody(const Recipe& recipe, const HPDF_Page& page);
-    void writeTitles(const std::string title, const char* subtitle, const HPDF_Page& page);
-    void writeIngredients(const std::vector<Ingredient>& ingredients, const HPDF_Page& page);
-    void writeMethod(const std::vector<std::string>& method, const HPDF_Page &page);
-    void pasteImage(const std::string& imagefilepath, const HPDF_Doc& doc, const HPDF_Page& page);
-    
 public:
-    Page(HPDF_Doc& pdf, const Recipe& recipe, const Fonts& fonts);
+    Page(HPDF_Doc& pdf, const TxtFile& recipe, const Fonts& fonts, const PageSet& page_settings);
+    
+private:
+    void writeToPage(const TxtFile& recipe, const HPDF_Page& page);
+    void wrapText(const HPDF_Page& page, const std::string& line);
+    float setMaxWidth(const HPDF_Page& page);
+    
+    void pageBreak(const HPDF_Page& page);
+    void addPage(const TxtFile& recipe, const Fonts& fonts, const PageSet& page_settings);
+    
+    void printPageCount(const HPDF_Page& page);
+    void drawCentreStroke(const HPDF_Page& page);
+    
+    const HPDF_Doc* pdf;
+    const Fonts* fonts;
+    const PageSet* pageSet;
+    
+    const int Y_PADDING { 50 };
+    const int X_PADDING { 20 };
 };
 
 #endif /* Page_h */

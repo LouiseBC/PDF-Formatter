@@ -1,30 +1,23 @@
-#include "PDF.hpp"
-#include <math.h>
 #include <iostream>
-#include <memory>
+#include "PDF.hpp"
+#include "TxtFile.hpp"
+#include "Page.hpp"
 
-//////////////////////////
-// PDF Class Functions ///
-//////////////////////////
+PDF::PDF(const std::string& doc_name, const std::string& src_reg, const std::string& src_bold, const PageSet& page_set)
+: doc_title{doc_name+".pdf"}, src_font_reg{src_reg}, src_font_bold{src_bold}, page_settings{page_set} {}
 
-PDF::PDF(const std::string& doc_title, const std::string& src_reg, const std::string& src_bold)
-{
-    doc_name = doc_title + ".pdf";
-    src_font_reg = src_reg;
-    src_font_bold = src_bold;
-}
 
-void PDF::make(const std::vector<Recipe>& recipes)
+void PDF::make(const std::vector<TxtFile>& recipes)
 {
     // Set up new pdf document & load fonts
     HPDF_Doc pdf = create_new();
     
-    // Add pages to document
+    // Add pages for each recipe (without storing)
     for (auto recipe : recipes)
-        Page newpage(pdf, recipe, fonts);
+        Page newpage{pdf, recipe, fonts, page_settings};
     
     // Save to PDF
-    HPDF_SaveToFile(pdf, doc_name.c_str());
+    HPDF_SaveToFile(pdf, doc_title.c_str());
     HPDF_Free(pdf);
 }
 
@@ -40,8 +33,8 @@ HPDF_Doc PDF::create_new()
     // Set fonts for this pdf
     const char* regfont = HPDF_LoadTTFontFromFile(pdf, src_font_reg.c_str(), HPDF_TRUE);
     const char* boldfont = HPDF_LoadTTFontFromFile(pdf, src_font_bold.c_str(), HPDF_TRUE);
-    fonts.bold = HPDF_GetFont(pdf, boldfont, NULL);
-    fonts.regular = HPDF_GetFont(pdf, regfont, NULL);
+    fonts.setBold(HPDF_GetFont(pdf, boldfont, NULL));
+    fonts.setRegular(HPDF_GetFont(pdf, regfont, NULL));
     
     return std::move(pdf);
 }

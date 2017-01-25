@@ -1,16 +1,16 @@
 #include <iostream>
-#include <vector>
-#include <fstream>
-#include <string>
-#include "Ingredient.hpp"
-#include "Recipe.hpp"
 #include "PDF.hpp"
+#include "Txtfile.hpp"
 
-int main() {
-    Recipe ottolenghi("notes.txt", "assets/image2.jpg");
+int main()
+{
+    TxtFile test("assets/text/puttanesca.txt");
+    TxtFile test2("assets/text/orzo.txt");
+    std::vector<TxtFile> recipes {test2};
     
-    std::vector<Recipe> recipes {ottolenghi};
+    PDF pdf("Title", "assets/fonts/Helvetica-Light.ttf", "assets/fonts/Didot-Bold.ttf", PageSet(HPDF_PAGE_SIZE_US5x7, HPDF_PAGE_PORTRAIT));
     
-    PDF pdf("MyRecipes", "assets/Helvetica-Light.ttf","assets/Didot-Bold.ttf");
     pdf.make(recipes);
+    
+    //std::cout << test2;
 }
