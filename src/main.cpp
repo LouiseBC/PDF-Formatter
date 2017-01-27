@@ -1,16 +1,17 @@
 #include <iostream>
+#include <list>
 #include "PDF.hpp"
 #include "Txtfile.hpp"
 
 int main()
 {
-    TxtFile test("assets/text/puttanesca.txt");
-    TxtFile test2("assets/text/orzo.txt");
-    std::vector<TxtFile> recipes {test2};
+    TxtFile orzo("assets/text/orzo.txt");
+    TxtFile lorem("assets/text/lorem.txt");
+    TxtFile alice("assets/text/alice.txt");
+    std::list<TxtFile> recipes { lorem, alice, orzo };
     
-    PDF pdf("Title", "assets/fonts/Helvetica-Light.ttf", "assets/fonts/Didot-Bold.ttf", PageSet(HPDF_PAGE_SIZE_US5x7, HPDF_PAGE_PORTRAIT));
+    PDF pdf("New", "assets/fonts/Helvetica-Light.ttf", "assets/fonts/Didot-Bold.ttf", PageSet());
     
     pdf.make(recipes);
     
-    //std::cout << test2;
 }

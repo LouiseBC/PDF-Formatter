@@ -6,7 +6,7 @@ std::ostream& operator<<(std::ostream& os, const TxtFile& t)
 {
     if (t.begin() == t.end()) { std::cerr << "Error: Empty text file\n"; return os; }
     
-    for (auto paragraph = t.begin(); paragraph != t.end(); ++paragraph) {
+    for (auto paragraph = t.begin(); paragraph != t.end(); std::advance(paragraph, 1)) {
         for (auto line : *paragraph)
             os << line.line << std::endl;
         os << std::endl;
@@ -40,8 +40,24 @@ TxtFile::TxtFile(const std::string& src_file)
             getline(is, line);
             if (is.eof()) break;
         }
-        // Newline: Start new paragraph
+        // Newline or '\B': Start new paragraph
         sections.push_back(p);
         p.clear();
     }
+}
+
+TxtFile::TxtFile(std::vector<Paragraph>::const_iterator begin,
+                 std::vector<Paragraph>::const_iterator end,
+                 Paragraph::const_iterator par_begin,
+                 Paragraph::const_iterator par_end)
+{
+    Paragraph p;
+    
+    for (auto line = par_begin; line != par_end; std::advance(line, 1))
+        p.push_back(Line{*line});
+    sections.push_back(p);
+    
+    for (auto sec = begin; sec != end; std::advance(sec, 1))
+        sections.push_back(*sec);
+    
 }

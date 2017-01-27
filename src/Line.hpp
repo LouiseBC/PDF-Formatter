@@ -9,6 +9,9 @@ struct Line {
     bool title;
     bool subtitle;
     bool pageBreak;
+    
+    Line(std::string string, bool ttl = false, bool subttl = false, bool pb = false)
+    : line{string}, title{ttl}, subtitle{subttl}, pageBreak{pb} {}
 };
 
 #endif

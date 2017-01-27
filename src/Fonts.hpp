@@ -25,4 +25,8 @@ private:
     const int BODY_MAX_CHARS { 63 };
 };
 
+namespace Font {
+    enum type { title = 0, subtitle, body };
+}
+
 #endif
